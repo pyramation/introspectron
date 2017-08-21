@@ -34,28 +34,8 @@ Object {
         "description": "field c description",
         "type": "int4",
       },
-      "name": Object {
-        "description": null,
-        "type": "text",
-      },
-      "price": Object {
-        "description": null,
-        "type": "numeric",
-      },
-      "product_no": Object {
-        "description": null,
-        "type": "int4",
-      },
-      "tags": Object {
-        "description": null,
-        "items": Object {
-          "type": "text",
-        },
-        "type": "array",
-      },
     },
     "required": Array [
-      "product_no",
       "a",
       "c",
     ],
@@ -64,18 +44,6 @@ Object {
   "test_schema/products": Object {
     "description": null,
     "properties": Object {
-      "a": Object {
-        "description": "field a description",
-        "type": "int4",
-      },
-      "b": Object {
-        "description": "field b description",
-        "type": "int4",
-      },
-      "c": Object {
-        "description": "field c description",
-        "type": "int4",
-      },
       "name": Object {
         "description": null,
         "type": "text",
@@ -98,8 +66,6 @@ Object {
     },
     "required": Array [
       "product_no",
-      "a",
-      "c",
     ],
     "type": "object",
   },

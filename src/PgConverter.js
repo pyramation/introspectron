@@ -30,13 +30,13 @@ export default class PgConverter extends PgCatalog {
       m[`${v.namespaceName}/${v.name}`] = {
         type: 'object',
         description: v.description,
-        properties: this.getAttributes(v.id)
+        properties: this.getClassAttributes(v.id)
           .map(attr => this.getAttr(attr))
           .reduce((m, { name, ...attr }) => {
             m[name] = attr;
             return m;
           }, {}),
-        required: this.getAttributes(v.id)
+        required: this.getClassAttributes(v.id)
           .filter(attr => attr.isNotNull)
           .map(attr => this.getAttr(attr).name)
       };
