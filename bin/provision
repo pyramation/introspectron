@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "$POSTGRES_DATABASE" ]; then
+  echo running with default ENVFILE
+  DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+  ENVFILE=`dirname $DIR`/.env
+  source $ENVFILE
+fi
+
+for f in ./sql/*.sql;
+do
+  PGPASSWORD=$POSTGRES_PASS psql $POSTGRES_DATABASE -U $POSTGRES_USER -h $POSTGRES_HOST -p $POSTGRES_PORT -f "$f"
+done

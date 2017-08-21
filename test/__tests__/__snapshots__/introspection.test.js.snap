@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`introspect converts to JSON schema procedures 1`] = `
+Object {
+  "test_schema/myfunc2": Object {
+    "description": "description for function here",
+    "properties": Object {
+      "_name": Object {
+        "type": "text",
+      },
+    },
+    "required": Array [
+      "_name",
+    ],
+    "type": "object",
+  },
+}
+`;
+
+exports[`introspect converts to JSON schema tables 1`] = `
+Object {
+  "test_schema/example": Object {
+    "description": "example table description",
+    "properties": Object {
+      "a": Object {
+        "description": "field a description",
+        "type": "int4",
+      },
+      "b": Object {
+        "description": "field b description",
+        "type": "int4",
+      },
+      "c": Object {
+        "description": "field c description",
+        "type": "int4",
+      },
+      "name": Object {
+        "description": null,
+        "type": "text",
+      },
+      "price": Object {
+        "description": null,
+        "type": "numeric",
+      },
+      "product_no": Object {
+        "description": null,
+        "type": "int4",
+      },
+      "tags": Object {
+        "description": null,
+        "items": Object {
+          "type": "text",
+        },
+        "type": "array",
+      },
+    },
+    "required": Array [
+      "product_no",
+      "a",
+      "c",
+    ],
+    "type": "object",
+  },
+  "test_schema/products": Object {
+    "description": null,
+    "properties": Object {
+      "a": Object {
+        "description": "field a description",
+        "type": "int4",
+      },
+      "b": Object {
+        "description": "field b description",
+        "type": "int4",
+      },
+      "c": Object {
+        "description": "field c description",
+        "type": "int4",
+      },
+      "name": Object {
+        "description": null,
+        "type": "text",
+      },
+      "price": Object {
+        "description": null,
+        "type": "numeric",
+      },
+      "product_no": Object {
+        "description": null,
+        "type": "int4",
+      },
+      "tags": Object {
+        "description": null,
+        "items": Object {
+          "type": "text",
+        },
+        "type": "array",
+      },
+    },
+    "required": Array [
+      "product_no",
+      "a",
+      "c",
+    ],
+    "type": "object",
+  },
+}
+`;
