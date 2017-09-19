@@ -1,6 +1,6 @@
 import PgCatalog from './PgCatalog';
 
-export default class PgConverter extends PgCatalog {
+export default class PgToSchemaJson extends PgCatalog {
   getTypeName(type) {
     return type.namespaceName === 'pg_catalog'
       ? type.name

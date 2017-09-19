@@ -1,5 +1,4 @@
 import { resolve as resolvePath } from 'path';
-import PgConverter from './PgConverter';
 import { readFile } from 'fs';
 
 /**
@@ -27,8 +26,5 @@ export default async function introspect(client, schemas) {
     values: [schemas]
   });
 
-  const objects = result.map(({ object }) => object);
-
-  // Extract out the objects from the query.
-  return new PgConverter(objects);
+  return result.map(({ object }) => object);
 }

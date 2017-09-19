@@ -1,25 +1,28 @@
 import { getConnection, closeConnection } from '../utils/SQLTest';
 
 import introspect from '../../src/introspect';
+import PgToSchemaJson from '../../src/PgToSchemaJson';
 
 let db;
-let catalog;
+let json;
+let objects;
 
 describe('introspect', () => {
   beforeAll(async () => {
     db = await getConnection();
-    catalog = await introspect(db, ['test_schema']);
+    objects = await introspect(db, ['test_schema']);
+    json = new PgToSchemaJson(objects);
   });
   afterAll(async () => {
     await closeConnection(db);
   });
   describe('converts to JSON schema', () => {
     it('tables', async () => {
-      var output = catalog.toTables();
+      var output = json.toTables();
       expect(output).toMatchSnapshot();
     });
     it('procedures', async () => {
-      var output = catalog.toProcs();
+      var output = json.toProcs();
       expect(output).toMatchSnapshot();
     });
   });
